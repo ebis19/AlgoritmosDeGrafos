@@ -21,13 +21,12 @@ public class Dijkstra {
 	//ArrayList<Integer> w;
 	ArrayList<Integer> v;
 	int nodo_inicial;
-	int cant_nodos;
 	int [] distancias;
 	int [] camino;
-	int[][] grafo;
+	Grafo grafo;
 	
 	
-	public Dijkstra(int nodo_inicial, int[][] grafo,int cant_nodos) {
+	public Dijkstra(int nodo_inicial, Grafo grafo) {
 		this.grafo = grafo;
 		// genero el conjunto w
 		//this.w = new ArrayList<Integer>();
@@ -36,30 +35,34 @@ public class Dijkstra {
 		
 		// genero el conjunto v con todos los nodos restantes
 		this.v = new ArrayList<Integer>();
-		for (int i = 0; i < cant_nodos ; i++) {
+		for (int i = 0; i < grafo.getCantN() ; i++) {
 			if(i!=nodo_inicial)
 				this.v.add(i);
 		}
-		this.distancias = new int[cant_nodos];
-		this.camino = new int[cant_nodos];
-		this.cant_nodos=cant_nodos;
+		this.distancias = new int[grafo.getCantN()];
+		this.camino = new int[grafo.getCantN()];
 		
 	}
 	
 	public void  calculo() {
 		
 		
-		// distancias iniciales
+		// Distancias iniciales
 		for (int i = 0; i < distancias.length; i++) {
-				distancias[i]=grafo[nodo_inicial][i];
+				distancias[i]=grafo.getPeso(nodo_inicial,i);
 		}
+		// Camino Inicial
+		for (int i = 0; i < distancias.length; i++) {
+			camino[i]=nodo_inicial;
+		}
+		
 		distancias[nodo_inicial]=0;
 		int n,dis;
 		while(!v.isEmpty()) {
 			n = removerNconPesoMenor();
-			for (int i = 0; i < cant_nodos ; i++) {
-				if(grafo[n][i]!=Integer.MAX_VALUE){
-					dis=distancias[n]+grafo[n][i];
+			for (int i = 0; i < grafo.getCantN() ; i++) {
+				if(grafo.getPeso(n, i)!=Integer.MAX_VALUE){
+					dis=distancias[n]+grafo.getPeso(n, i);
 					if(dis<distancias[i])
 						distancias[i]=dis;
 				

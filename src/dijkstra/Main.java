@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//int[][] grafo = new int[5][5];
+		/*//int[][] grafo = new int[5][5];
 		int i=Integer.MAX_VALUE;
 		int[][]  grafo= {{i,4,i,1,6},
 						 {i,i,1,i,i},
@@ -19,9 +19,9 @@ public class Main {
 			if(j!=0)
 				System.out.println(d.distancias[j]+"");
 }
-		} 
+		} */
 					
-
+	}
 	}
 
 
