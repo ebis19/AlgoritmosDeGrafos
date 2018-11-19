@@ -26,5 +26,25 @@ public class DijktraTest {
 		
 		Assert.assertArrayEquals(dis, d.distancias);
 		} 
+	public void grafoUnsoloelemento() {
+		
+		int i=Integer.MAX_VALUE;
+		Grafo grafo = new Grafo(1); 
+		Dijkstra d =new Dijkstra(0, grafo);
+				d.calculo();
+		int [] dis ={0};
+		
+		Assert.assertArrayEquals(dis, d.distancias);
+		}
+	public void grafoVacio() {
+		
+		int i=Integer.MAX_VALUE;
+		Grafo grafo = new Grafo(0); 
+		Dijkstra d =new Dijkstra(0, grafo);
+				d.calculo();
+		int [] dis ={};
+		
+		Assert.assertArrayEquals(dis, d.distancias);
+		} 
 
 }
