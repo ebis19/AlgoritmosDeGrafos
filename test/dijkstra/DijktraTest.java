@@ -23,8 +23,10 @@ public class DijktraTest {
 		Dijkstra d =new Dijkstra(0, grafo);
 				d.calculo();
 		int [] dis ={0,4,3,1,5};
+		int [] camino ={1,1,4,1,3};
 		
 		Assert.assertArrayEquals(dis, d.distancias);
+		Assert.assertArrayEquals(camino, d.camino);
 		} 
 	public void grafoUnsoloelemento() {
 		

@@ -1,7 +1,6 @@
 package dijkstra;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 
 /*
@@ -10,7 +9,8 @@ import java.util.Iterator;
  * solo para la logica 
  * ya que voy sacando de v los que pasan a w;
  * 
- * 
+ * Complejidad O(N^2)
+ * si se cambia por una cola de pioridad implementada con un monticulo cambia a O(N*log N)
  * 
  * 
  * */
@@ -53,8 +53,9 @@ public class Dijkstra {
 		}
 		// Camino Inicial
 		for (int i = 0; i < distancias.length; i++) {
-			camino[i]=nodo_inicial;
+			camino[i]=nodo_inicial+1;
 		}
+		
 		
 		distancias[nodo_inicial]=0;
 		int n,dis;
@@ -63,9 +64,10 @@ public class Dijkstra {
 			for (int i = 0; i < grafo.getCantN() ; i++) {
 				if(grafo.getPeso(n, i)!=Integer.MAX_VALUE){
 					dis=distancias[n]+grafo.getPeso(n, i);
-					if(dis<distancias[i])
+					if(dis<distancias[i]) {
 						distancias[i]=dis;
-				
+						camino[i]=n+1;
+					}
 				}
 			}
 		}
@@ -83,6 +85,15 @@ public class Dijkstra {
 		v.remove(v.indexOf(menor));
 		return menor;
 	
+	}
+
+	public int[] getCamino() {
+		return this.camino;
+	}
+
+	public int[] getDistancias() {
+		// TODO Auto-generated method stub
+		return distancias;
 	}
 	
 		
