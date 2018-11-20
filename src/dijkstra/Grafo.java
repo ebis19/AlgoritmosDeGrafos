@@ -1,8 +1,8 @@
 package dijkstra;
 
 public class Grafo {
-	int[][] matriz;
-	int cant_nodos;
+	private int[][] matriz;
+	private int cant_nodos;
 
 	public Grafo(int cant_nodos) {
 		matriz = new int[cant_nodos][cant_nodos];
@@ -23,6 +23,10 @@ public class Grafo {
 	}
 	
 
+	public int[][] getMatriz() {
+		return matriz;
+	}
+
 	public int getCantN() {
 		
 		return cant_nodos;
@@ -32,4 +36,15 @@ public class Grafo {
 		matriz[f-1][c-1]=p;
 		
 	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+
+	
+
+	
+	
+	
 }

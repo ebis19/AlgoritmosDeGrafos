@@ -25,8 +25,8 @@ public class DijktraTest {
 		int [] dis ={0,4,3,1,5};
 		int [] camino ={1,1,4,1,3};
 		
-		Assert.assertArrayEquals(dis, d.distancias);
-		Assert.assertArrayEquals(camino, d.camino);
+		Assert.assertArrayEquals(dis, d.getDistancias());
+		Assert.assertArrayEquals(camino, d.getCamino());
 		} 
 	public void grafoUnsoloelemento() {
 		
@@ -36,7 +36,7 @@ public class DijktraTest {
 				d.calculo();
 		int [] dis ={0};
 		
-		Assert.assertArrayEquals(dis, d.distancias);
+		Assert.assertArrayEquals(dis, d.getDistancias());
 		}
 	public void grafoVacio() {
 		
@@ -46,7 +46,7 @@ public class DijktraTest {
 				d.calculo();
 		int [] dis ={};
 		
-		Assert.assertArrayEquals(dis, d.distancias);
+		Assert.assertArrayEquals(dis, d.getDistancias());
 		} 
 
 }
