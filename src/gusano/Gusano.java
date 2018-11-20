@@ -16,11 +16,20 @@ public class Gusano {
 	ArrayList<CInfectada> cinfectadas;
 
 	public Gusano(String a) throws IOException {
+		cinfectadas = new ArrayList<CInfectada>();
 		Scanner in = new Scanner(new File(a));
 		int cant_nodos = in.nextInt();
 		mapa_red = new Grafo(cant_nodos);
+		int orig;
+		int des;
+		int p;
+		
 		for (int i = 0; i < cant_nodos; i++) {
-			mapa_red.setArista(in.nextInt(), in.nextInt(), in.nextInt());
+			orig=in.nextInt();
+			p=in.nextInt();
+			des=in.nextInt();
+			mapa_red.setArista(orig, des, p);
+			mapa_red.setArista(des, orig, p);
 		}
 		int cant_c = in.nextInt();
 
@@ -28,6 +37,7 @@ public class Gusano {
 			cinfectadas.add(new CInfectada(in.nextInt(), in.nextInt()));
 		}
 		in.close();
+		
 	}
 
 	public String encontrarPcs() {
@@ -36,6 +46,8 @@ public class Gusano {
 
 		Floyd f = new Floyd(mapa_red);
 		int[][] costos_min = f.getCostosminimos();
+		
+		
 		CInfectada c;
 		Iterator<CInfectada> it;
 		boolean aux;
@@ -44,11 +56,11 @@ public class Gusano {
 			aux = true;
 			while (it.hasNext() && aux) {
 				c = it.next();
-				if (costos_min[i][c.getN() - 1] == c.getT())
-					aux = false;
+				if (costos_min[i][c.getN() - 1] != c.getT())
+					aux = false;	
 			}
 			if (aux)
-				computadoras += i;
+				computadoras += (i+1);
 		}
 		return computadoras;
 	}
