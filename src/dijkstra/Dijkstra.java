@@ -2,6 +2,8 @@ package dijkstra;
 
 import java.util.ArrayList;
 
+import grafos.Grafo;
+
 
 /*
  * 

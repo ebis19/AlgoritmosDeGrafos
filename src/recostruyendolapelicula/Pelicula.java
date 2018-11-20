@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 import dijkstra.Dijkstra;
-import dijkstra.Grafo;
+import grafos.Grafo;
 /*
  * 
  * Author : Biscaia Elias

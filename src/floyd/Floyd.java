@@ -1,19 +1,18 @@
 package floyd;
 
-import dijkstra.Grafo;
+import grafos.Grafo;
 
 public class Floyd {
-	
-	//MatrizFloyd m;
+
+	// MatrizFloyd m;
 	private int[][] mf;
-	
+
 	public Floyd(Grafo grafo) throws CloneNotSupportedException {
 		mf = grafo.getMatriz().clone();
-		
+
 		for (int i = 0; i < grafo.getCantN(); i++) {
-			mf[i][i]=0;
+			mf[i][i] = 0;
 		}
-		System.out.println(mf[0][0]);
 		int nuevopeso;
 		for (int k = 0; k < grafo.getCantN(); k++) {
 			for (int i = 0; i < grafo.getCantN(); i++) {
@@ -29,10 +28,10 @@ public class Floyd {
 		}
 
 	}
+
 	public int[][] getCostosminimos() {
 		return mf;
 	}
-	
 	
 	
 	

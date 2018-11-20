@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import dijkstra.Grafo;
+import grafos.Grafo;
 
 public class FloyTest {
 	@Test

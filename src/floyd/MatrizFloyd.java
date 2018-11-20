@@ -1,6 +1,6 @@
 package floyd;
 
-import dijkstra.Grafo;
+import grafos.Grafo;
 
 public class MatrizFloyd extends Grafo {
 

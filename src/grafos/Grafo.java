@@ -1,4 +1,4 @@
-package dijkstra;
+package grafos;
 
 public class Grafo {
 	private int[][] matriz;
