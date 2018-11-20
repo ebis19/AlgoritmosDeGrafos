@@ -12,7 +12,7 @@ import grafos.Grafo;
 
 public class FloyTest {
 	@Test
-	public void floydTest() throws CloneNotSupportedException{
+	public void floydTest() {
 
 		Grafo g = new Grafo(3);
 		g.setArista(1, 3, 8);
