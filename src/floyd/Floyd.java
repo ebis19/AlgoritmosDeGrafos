@@ -7,7 +7,7 @@ public class Floyd {
 	// MatrizFloyd m;
 	private int[][] mf;
 
-	public Floyd(Grafo grafo)  {
+	public Floyd(Grafo grafo) {
 		mf = grafo.getMatriz().clone();
 		for (int i = 0; i < grafo.getCantN(); i++) {
 			mf[i][i] = 0;
@@ -31,10 +31,5 @@ public class Floyd {
 	public int[][] getCostosminimos() {
 		return mf;
 	}
-	
-	
-	
-	
-	
 
 }

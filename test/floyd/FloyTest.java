@@ -1,6 +1,5 @@
 package floyd;
 
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -18,7 +17,7 @@ public class FloyTest {
 		g.setArista(1, 3, 8);
 		g.setArista(2, 1, 5);
 		g.setArista(3, 2, 3);
-		int [][] fg= new Floyd(g).getCostosminimos();
+		int[][] fg = new Floyd(g).getCostosminimos();
 		assertNotNull(fg);
 		Grafo fgresultado = new Grafo(3);
 		fgresultado.setArista(1, 1, 0);
@@ -32,18 +31,14 @@ public class FloyTest {
 		fgresultado.setArista(3, 1, 8);
 		fgresultado.setArista(3, 2, 3);
 		fgresultado.setArista(3, 3, 0);
-	
-		
-		
+
 		for (int i = 0; i < fgresultado.getCantN(); i++) {
 			for (int j = 0; j < fgresultado.getCantN(); j++) {
-				assertEquals(fgresultado.getPeso(i, j),fg[i][j] );
+				assertEquals(fgresultado.getPeso(i, j), fg[i][j]);
 			}
 		}
-		
-		//assertEquals(, actual);
+
+		// assertEquals(, actual);
 	}
-	
-	
 
 }

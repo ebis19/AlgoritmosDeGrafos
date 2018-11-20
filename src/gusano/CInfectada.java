@@ -6,8 +6,8 @@ public class CInfectada {
 	private int t;
 
 	public CInfectada(int n, int t) {
-		this.n =n;
-		this.t =t ;
+		this.n = n;
+		this.t = t;
 	}
 
 	public int getN() {
@@ -17,6 +17,5 @@ public class CInfectada {
 	public int getT() {
 		return t;
 	}
-	
 
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import grafos.Grafo;
 
-
 /*
  * 
  * En esta implementacion w no es necesario para la codificacion
@@ -16,7 +15,6 @@ import grafos.Grafo;
  * 
  * 
  * */
-
 
 public class Dijkstra {
 

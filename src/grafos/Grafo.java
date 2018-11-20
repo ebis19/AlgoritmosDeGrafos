@@ -12,29 +12,26 @@ public class Grafo {
 			}
 
 		}
-		this.cant_nodos = cant_nodos; 
-	
-		
+		this.cant_nodos = cant_nodos;
 
 	}
-	
-	public int getPeso(int i,int j) {
+
+	public int getPeso(int i, int j) {
 		return matriz[i][j];
 	}
-	
 
 	public int[][] getMatriz() {
 		return matriz;
 	}
 
 	public int getCantN() {
-		
+
 		return cant_nodos;
 	}
 
 	public void setArista(int f, int c, int p) {
-		matriz[f-1][c-1]=p;
-		
+		matriz[f - 1][c - 1] = p;
+
 	}
 
 	@Override
@@ -42,9 +39,4 @@ public class Grafo {
 		return super.clone();
 	}
 
-	
-
-	
-	
-	
 }
